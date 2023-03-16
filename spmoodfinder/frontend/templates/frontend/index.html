@@ -1,13 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .heading{
+            color: green;
+        }
+        .container
+        {
+            flex-wrap: wrao;
+        }
+        .container div{
+            align-self: flex-start;
+            text-align: center;
+        }
+        header{
+            text-align: center;
+        }
+    </style>
 </head>
-<body>  
-    <h1>Hello</h1>
-    {{ songname }}
+
+<body>
+    <header>
+        <h1 class="heading">Currently Playing</h1>
+    <h3>{{ songname }} </h3>
+    </header>
+    
+    <br>
+    <div class= "container">
+        <div><img src={{songimage}} height=200px width=200px></div>
+        <div>
+        {% for ele in lyrics %}
+        {{ele}}
+        <br>
+        {% endfor %}
+
+            
+        </div>
+    </div>
+    
+    <br>
+
+    
+    <!-- {% for key in analysis.items %}
+    <p> {{ key.0 }} : {{key.1}}</p>
+    {% endfor %}
+    <br>
+    <br> -->
+
 </body>
+
 </html>
